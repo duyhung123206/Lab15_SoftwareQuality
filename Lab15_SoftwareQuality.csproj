@@ -92,6 +92,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rptStudent.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="ValidationResult.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -109,6 +110,7 @@
     <EmbeddedResource Include="rptStudent.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptStudent.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <None Include="DataSetStudent.xsc">
       <DependentUpon>DataSetStudent.xsd</DependentUpon>

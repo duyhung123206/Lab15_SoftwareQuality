@@ -1,3 +1,5 @@
+C:\nguyenduyhung\Lab15_SoftwareQuality\Lab15_SoftwareQuality\bin\x86\Debug\rptStudent.rpt
+C:\nguyenduyhung\Lab15_SoftwareQuality\Lab15_SoftwareQuality\bin\x86\Debug\rptStudent.cs
 C:\nguyenduyhung\Lab15_SoftwareQuality\Lab15_SoftwareQuality\bin\x86\Debug\Lab15_SoftwareQuality.exe.config
 C:\nguyenduyhung\Lab15_SoftwareQuality\Lab15_SoftwareQuality\bin\x86\Debug\Lab15_SoftwareQuality.exe
 C:\nguyenduyhung\Lab15_SoftwareQuality\Lab15_SoftwareQuality\bin\x86\Debug\Lab15_SoftwareQuality.pdb
@@ -26,3 +28,4 @@ C:\nguyenduyhung\Lab15_SoftwareQuality\Lab15_SoftwareQuality\obj\x86\Debug\Lab15
 C:\nguyenduyhung\Lab15_SoftwareQuality\Lab15_SoftwareQuality\obj\x86\Debug\Lab15_So.D1AD6C9B.Up2Date
 C:\nguyenduyhung\Lab15_SoftwareQuality\Lab15_SoftwareQuality\obj\x86\Debug\Lab15_SoftwareQuality.exe
 C:\nguyenduyhung\Lab15_SoftwareQuality\Lab15_SoftwareQuality\obj\x86\Debug\Lab15_SoftwareQuality.pdb
+C:\nguyenduyhung\Lab15_SoftwareQuality\Lab15_SoftwareQuality\obj\x86\Debug\Lab15_SoftwareQuality.exe.config
