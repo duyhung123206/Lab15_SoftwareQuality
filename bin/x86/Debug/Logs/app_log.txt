@@ -1,0 +1,130 @@
+[2026-11-16 16:33:39] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:33:39] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:33:41] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:33:41] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:33:41] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:33:41] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:33:43] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:33:43] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:33:43] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:33:43] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:33:46] [ERROR] Lỗi hệ thống khi xem báo cáo theo điểm | Exception: The type initializer for 'CrystalDecisions.CrystalReports.Engine.ReportDocument' threw an exception. 
+StackTrace:    at CrystalDecisions.CrystalReports.Engine.ReportDocument..ctor()
+   at CrystalDecisions.CrystalReports.Engine.ReportClass..ctor()
+   at Lab15_SoftwareQuality.rptStudent..ctor() in C:\nguyenduyhung\Lab15_SoftwareQuality\Lab15_SoftwareQuality\rptStudent.cs:line 21
+   at Lab15_SoftwareQuality.Form1.btnXemTheoDiem_Click(Object sender, EventArgs e) in C:\nguyenduyhung\Lab15_SoftwareQuality\Lab15_SoftwareQuality\Form1.cs:line 134
+------------------------------------------------------------
+[2026-11-16 16:35:56] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:35:56] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:35:58] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:35:58] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:36:01] [ERROR] Lỗi hệ thống khi xem báo cáo theo khoa | Exception: The type initializer for 'CrystalDecisions.CrystalReports.Engine.ReportDocument' threw an exception. 
+StackTrace:    at CrystalDecisions.CrystalReports.Engine.ReportDocument..ctor()
+   at CrystalDecisions.CrystalReports.Engine.ReportClass..ctor()
+   at Lab15_SoftwareQuality.rptStudent..ctor() in C:\nguyenduyhung\Lab15_SoftwareQuality\Lab15_SoftwareQuality\rptStudent.cs:line 21
+   at Lab15_SoftwareQuality.Form1.btnXem_Click(Object sender, EventArgs e) in C:\nguyenduyhung\Lab15_SoftwareQuality\Lab15_SoftwareQuality\Form1.cs:line 78
+------------------------------------------------------------
+[2026-11-16 16:36:05] [INFO] Cảnh báo nghiệp vụ (Điểm): Vui lòng nhập định dạng số hợp lệ cho điểm Min và Max!
+------------------------------------------------------------
+[2026-11-16 16:36:07] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:36:07] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:36:08] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:36:08] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:36:09] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:36:09] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:36:10] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:36:10] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:36:13] [ERROR] Lỗi hệ thống khi xem báo cáo theo điểm | Exception: The type initializer for 'CrystalDecisions.CrystalReports.Engine.ReportDocument' threw an exception. 
+StackTrace:    at CrystalDecisions.CrystalReports.Engine.ReportDocument..ctor()
+   at CrystalDecisions.CrystalReports.Engine.ReportClass..ctor()
+   at Lab15_SoftwareQuality.rptStudent..ctor() in C:\nguyenduyhung\Lab15_SoftwareQuality\Lab15_SoftwareQuality\rptStudent.cs:line 21
+   at Lab15_SoftwareQuality.Form1.btnXemTheoDiem_Click(Object sender, EventArgs e) in C:\nguyenduyhung\Lab15_SoftwareQuality\Lab15_SoftwareQuality\Form1.cs:line 134
+------------------------------------------------------------
+[2026-11-16 16:36:14] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:36:14] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:36:14] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:36:14] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:36:15] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:36:15] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:37:24] [ERROR] Lỗi hệ thống khi xem báo cáo theo điểm | Exception: The type initializer for 'CrystalDecisions.CrystalReports.Engine.ReportDocument' threw an exception. 
+StackTrace:    at CrystalDecisions.CrystalReports.Engine.ReportDocument..ctor()
+   at CrystalDecisions.CrystalReports.Engine.ReportClass..ctor()
+   at Lab15_SoftwareQuality.rptStudent..ctor() in C:\nguyenduyhung\Lab15_SoftwareQuality\Lab15_SoftwareQuality\rptStudent.cs:line 21
+   at Lab15_SoftwareQuality.Form1.btnXemTheoDiem_Click(Object sender, EventArgs e) in C:\nguyenduyhung\Lab15_SoftwareQuality\Lab15_SoftwareQuality\Form1.cs:line 134
+------------------------------------------------------------
+[2026-11-16 16:56:19] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:56:19] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:56:21] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:56:21] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:56:22] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:56:22] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:56:23] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:56:23] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:56:24] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:56:24] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:56:27] [INFO] Xem báo cáo theo khoảng điểm [4 - 9] thành công.
+------------------------------------------------------------
+[2026-11-16 16:57:09] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:57:09] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:57:11] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:57:11] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:57:11] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:57:11] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:57:12] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:57:12] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:57:12] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:57:12] [INFO] Khởi động ứng dụng thành công.
+------------------------------------------------------------
+[2026-11-16 16:57:14] [INFO] Xem báo cáo thành công cho khoa: Công nghệ thông tin
+------------------------------------------------------------
+[2026-11-16 16:57:18] [INFO] Xem báo cáo theo khoảng điểm [4 - 8] thành công.
+------------------------------------------------------------
+[2026-11-16 16:57:26] [INFO] Xem báo cáo thành công cho khoa: Công nghệ thông tin
+------------------------------------------------------------
