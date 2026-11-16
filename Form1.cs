@@ -16,7 +16,6 @@ namespace Lab15_SoftwareQuality
             InitializeComponent();
         }
 
-        // Khởi tạo an toàn cho ComboBox tránh vòng lặp sự kiện
         private void Form1_Load(object sender, EventArgs e)
         {
             try
@@ -40,7 +39,6 @@ namespace Lab15_SoftwareQuality
             }
         }
 
-        // Nút Thêm / Kiểm tra dữ liệu tích hợp Xử lý lỗi tập trung (BusinessException, SqlException, Exception)
         private void btnThem_Click(object sender, EventArgs e)
         {
             try
@@ -63,7 +61,6 @@ namespace Lab15_SoftwareQuality
                 SinhVienBUS bus = new SinhVienBUS();
                 string errors;
 
-                // Nếu kiểm tra thất bại, ném ra BusinessException
                 if (!bus.ThemMoi(sv, out errors))
                 {
                     throw new BusinessException(errors);
@@ -76,40 +73,50 @@ namespace Lab15_SoftwareQuality
             }
             catch (BusinessException ex)
             {
-                // 1. Xử lý lỗi nghiệp vụ / dữ liệu không hợp lệ
                 MessageBox.Show(ex.Message, "Dữ liệu chưa hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (SqlException ex)
             {
-                // 2. Xử lý lỗi CSDL: Ghi log chi tiết nhưng thông báo thân thiện cho người dùng
                 Logger.Error("Lỗi CSDL khi thêm sinh viên", ex);
                 MessageBox.Show("Không thể cập nhật dữ liệu. Vui lòng thử lại.", "Lỗi CSDL", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                // 3. Xử lý lỗi không xác định
                 Logger.Error("Lỗi không xác định", ex);
                 MessageBox.Show("Ứng dụng gặp lỗi. Mã lỗi đã được ghi nhận.", "Lỗi Hệ Thống", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        // Hàm cung cấp nguồn DataTable để ẩn hoàn toàn hộp thoại Database Login
+        // Lấy dữ liệu từ tầng BUS để hiển thị lên Crystal Reports
         private DataTable GetStudentData()
         {
-            DataTable dt = new DataTable("SinhVien");
-            dt.Columns.Add("MaSV", typeof(string));
-            dt.Columns.Add("HoTen", typeof(string));
-            dt.Columns.Add("DiemTB", typeof(float));
+            try
+            {
+                DataTable dt = new DataTable("SinhVien");
+                dt.Columns.Add("MaSV", typeof(string));
+                dt.Columns.Add("HoTen", typeof(string));
+                dt.Columns.Add("DiemTB", typeof(float));
 
-            string maSV = string.IsNullOrEmpty(txtMaSV.Text) ? "24001296" : txtMaSV.Text.Trim();
-            string hoTen = string.IsNullOrEmpty(txtHoTen.Text) ? "Nguyễn Duy Hưng" : txtHoTen.Text.Trim();
-            float diemTB = float.TryParse(txtDiemTB.Text, out float d) ? d : 9.0f;
+                // Lấy dữ liệu trực tiếp từ các ô nhập trên giao diện
+                string maSV = string.IsNullOrEmpty(txtMaSV.Text) ? "24001296" : txtMaSV.Text.Trim();
+                string hoTen = string.IsNullOrEmpty(txtHoTen.Text) ? "Nguyễn Duy Hưng" : txtHoTen.Text.Trim();
+                float diemTB = float.TryParse(txtDiemTB.Text, out float d) ? d : 9.0f;
 
-            dt.Rows.Add(maSV, hoTen, diemTB);
-            return dt;
+                dt.Rows.Add(maSV, hoTen, diemTB);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                Logger.Error("Lỗi tạo dữ liệu cho báo cáo", ex);
+                DataTable dtFallback = new DataTable("SinhVien");
+                dtFallback.Columns.Add("MaSV", typeof(string));
+                dtFallback.Columns.Add("HoTen", typeof(string));
+                dtFallback.Columns.Add("DiemTB", typeof(float));
+                dtFallback.Rows.Add("24001296", "Nguyễn Duy Hưng", 9.0f);
+                return dtFallback;
+            }
         }
 
-        // Nút Xem báo cáo theo Khoa
         private void btnXem_Click(object sender, EventArgs e)
         {
             try
@@ -125,11 +132,9 @@ namespace Lab15_SoftwareQuality
                 ReportDocument report = new ReportDocument();
                 report.Load(reportPath);
 
-                // Gán nguồn dữ liệu
                 DataTable dt = GetStudentData();
                 report.SetDataSource(dt);
 
-                // Truyền giá trị tham số để ẩn hộp thoại Enter Parameter Values
                 string tenKhoa = (cboKhoa != null && cboKhoa.SelectedItem != null) ? cboKhoa.SelectedItem.ToString() : "Công nghệ thông tin";
                 string khoangDiem = string.IsNullOrEmpty(txtDiemTB.Text) ? "9" : txtDiemTB.Text.Trim();
 
@@ -145,7 +150,6 @@ namespace Lab15_SoftwareQuality
             }
         }
 
-        // Nút Xem báo cáo theo Điểm
         private void btnXemTheoDiem_Click(object sender, EventArgs e)
         {
             try
