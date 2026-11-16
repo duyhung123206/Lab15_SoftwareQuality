@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.IO;
 using System.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
@@ -15,6 +16,7 @@ namespace Lab15_SoftwareQuality
             InitializeComponent();
         }
 
+        // Khởi tạo an toàn cho ComboBox tránh vòng lặp sự kiện
         private void Form1_Load(object sender, EventArgs e)
         {
             try
@@ -38,6 +40,7 @@ namespace Lab15_SoftwareQuality
             }
         }
 
+        // Nút Thêm / Kiểm tra dữ liệu tích hợp Xử lý lỗi tập trung (BusinessException, SqlException, Exception)
         private void btnThem_Click(object sender, EventArgs e)
         {
             try
@@ -60,13 +63,10 @@ namespace Lab15_SoftwareQuality
                 SinhVienBUS bus = new SinhVienBUS();
                 string errors;
 
+                // Nếu kiểm tra thất bại, ném ra BusinessException
                 if (!bus.ThemMoi(sv, out errors))
                 {
-                    MessageBox.Show("Dữ liệu không hợp lệ:\n" + errors,
-                                    "Lỗi Kiểm Tra Dữ Liệu",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Warning);
-                    return;
+                    throw new BusinessException(errors);
                 }
 
                 MessageBox.Show("Thêm sinh viên thành công!",
@@ -74,16 +74,26 @@ namespace Lab15_SoftwareQuality
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
             }
+            catch (BusinessException ex)
+            {
+                // 1. Xử lý lỗi nghiệp vụ / dữ liệu không hợp lệ
+                MessageBox.Show(ex.Message, "Dữ liệu chưa hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (SqlException ex)
+            {
+                // 2. Xử lý lỗi CSDL: Ghi log chi tiết nhưng thông báo thân thiện cho người dùng
+                Logger.Error("Lỗi CSDL khi thêm sinh viên", ex);
+                MessageBox.Show("Không thể cập nhật dữ liệu. Vui lòng thử lại.", "Lỗi CSDL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             catch (Exception ex)
             {
-                Logger.Error("Lỗi khi thực hiện thêm sinh viên", ex);
-                MessageBox.Show("Đã xảy ra lỗi hệ thống! Chi tiết đã được ghi vào tệp log.",
-                                "Lỗi",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
+                // 3. Xử lý lỗi không xác định
+                Logger.Error("Lỗi không xác định", ex);
+                MessageBox.Show("Ứng dụng gặp lỗi. Mã lỗi đã được ghi nhận.", "Lỗi Hệ Thống", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        // Hàm cung cấp nguồn DataTable để ẩn hoàn toàn hộp thoại Database Login
         private DataTable GetStudentData()
         {
             DataTable dt = new DataTable("SinhVien");
@@ -115,18 +125,17 @@ namespace Lab15_SoftwareQuality
                 ReportDocument report = new ReportDocument();
                 report.Load(reportPath);
 
-                // 1. Gán nguồn dữ liệu DataTable để tránh hỏi Database Login
+                // Gán nguồn dữ liệu
                 DataTable dt = GetStudentData();
                 report.SetDataSource(dt);
 
-                // 2. Truyền giá trị cho các tham số (Parameters) trong file .rpt để ẩn hộp thoại nhập tham số
+                // Truyền giá trị tham số để ẩn hộp thoại Enter Parameter Values
                 string tenKhoa = (cboKhoa != null && cboKhoa.SelectedItem != null) ? cboKhoa.SelectedItem.ToString() : "Công nghệ thông tin";
                 string khoangDiem = string.IsNullOrEmpty(txtDiemTB.Text) ? "9" : txtDiemTB.Text.Trim();
 
                 report.SetParameterValue("pTenKhoa", tenKhoa);
                 report.SetParameterValue("pKhoangDiem", khoangDiem);
 
-                // 3. Hiển thị lên Viewer
                 crystalReportViewer1.ReportSource = report;
             }
             catch (Exception ex)
@@ -155,7 +164,6 @@ namespace Lab15_SoftwareQuality
                 DataTable dt = GetStudentData();
                 report.SetDataSource(dt);
 
-                // Truyền tham số tương tự cho nút xem theo điểm
                 string tenKhoa = (cboKhoa != null && cboKhoa.SelectedItem != null) ? cboKhoa.SelectedItem.ToString() : "Công nghệ thông tin";
                 string khoangDiem = string.IsNullOrEmpty(txtDiemTB.Text) ? "9" : txtDiemTB.Text.Trim();
 
