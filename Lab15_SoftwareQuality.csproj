@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessException.cs" />
+    <Compile Include="Bus\SinhVienBUS.cs" />
     <Compile Include="DataSetStudent.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -92,6 +93,7 @@
       <DependentUpon>rptStudent.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ValidationResult.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

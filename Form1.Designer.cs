@@ -35,6 +35,9 @@
             this.btnXemTheoDiem = new System.Windows.Forms.Button();
             this.btnXuatExcel = new System.Windows.Forms.Button();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.txtMaSV = new System.Windows.Forms.TextBox();
+            this.txtHoTen = new System.Windows.Forms.TextBox();
+            this.txtDiemTB = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // cboKhoa
@@ -44,8 +47,6 @@
             this.cboKhoa.Name = "cboKhoa";
             this.cboKhoa.Size = new System.Drawing.Size(239, 24);
             this.cboKhoa.TabIndex = 0;
-            this.cboKhoa.SelectedIndexChanged += new System.EventHandler(this.Form1_Load);
-            this.cboKhoa.Click += new System.EventHandler(this.Form1_Load);
             // 
             // txtMin
             // 
@@ -73,7 +74,6 @@
             this.btnXem.TabIndex = 3;
             this.btnXem.Text = "Xem theo Khoa";
             this.btnXem.UseVisualStyleBackColor = true;
-            this.btnXem.TextChanged += new System.EventHandler(this.btnXem_Click);
             this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
             // btnXemTheoDiem
@@ -84,7 +84,6 @@
             this.btnXemTheoDiem.TabIndex = 4;
             this.btnXemTheoDiem.Text = "Xem theo Điểm";
             this.btnXemTheoDiem.UseVisualStyleBackColor = true;
-            this.btnXemTheoDiem.TextChanged += new System.EventHandler(this.btnXemTheoDiem_Click);
             this.btnXemTheoDiem.Click += new System.EventHandler(this.btnXemTheoDiem_Click);
             // 
             // btnXuatExcel
@@ -95,7 +94,6 @@
             this.btnXuatExcel.TabIndex = 5;
             this.btnXuatExcel.Text = "Xuất Excel";
             this.btnXuatExcel.UseVisualStyleBackColor = true;
-            this.btnXuatExcel.TextChanged += new System.EventHandler(this.btnXuatExcel_Click);
             this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
             // 
             // crystalReportViewer1
@@ -110,11 +108,40 @@
             this.crystalReportViewer1.Load += new System.EventHandler(this.Form1_Load);
             this.crystalReportViewer1.Click += new System.EventHandler(this.Form1_Load);
             // 
+            // txtMaSV
+            // 
+            this.txtMaSV.Location = new System.Drawing.Point(546, 12);
+            this.txtMaSV.Name = "txtMaSV";
+            this.txtMaSV.Size = new System.Drawing.Size(208, 22);
+            this.txtMaSV.TabIndex = 7;
+            this.txtMaSV.Click += new System.EventHandler(this.Form1_Load);
+            this.txtMaSV.TextChanged += new System.EventHandler(this.Form1_Load);
+            // 
+            // txtHoTen
+            // 
+            this.txtHoTen.Location = new System.Drawing.Point(546, 61);
+            this.txtHoTen.Name = "txtHoTen";
+            this.txtHoTen.Size = new System.Drawing.Size(208, 22);
+            this.txtHoTen.TabIndex = 8;
+            this.txtHoTen.Click += new System.EventHandler(this.Form1_Load);
+            this.txtHoTen.TextChanged += new System.EventHandler(this.Form1_Load);
+            // 
+            // txtDiemTB
+            // 
+            this.txtDiemTB.Location = new System.Drawing.Point(814, 12);
+            this.txtDiemTB.Name = "txtDiemTB";
+            this.txtDiemTB.Size = new System.Drawing.Size(233, 22);
+            this.txtDiemTB.TabIndex = 9;
+            this.txtDiemTB.Click += new System.EventHandler(this.Form1_Load);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1059, 665);
+            this.Controls.Add(this.txtDiemTB);
+            this.Controls.Add(this.txtHoTen);
+            this.Controls.Add(this.txtMaSV);
             this.Controls.Add(this.crystalReportViewer1);
             this.Controls.Add(this.btnXuatExcel);
             this.Controls.Add(this.btnXemTheoDiem);
@@ -138,6 +165,9 @@
         private System.Windows.Forms.Button btnXemTheoDiem;
         private System.Windows.Forms.Button btnXuatExcel;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private System.Windows.Forms.TextBox txtMaSV;
+        private System.Windows.Forms.TextBox txtHoTen;
+        private System.Windows.Forms.TextBox txtDiemTB;
     }
 }
 
